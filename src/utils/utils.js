@@ -6,12 +6,13 @@ export const roundUp = (value, x) => {
 }
 
 const formatter = new Intl.NumberFormat('en-US');
-
+// converting the number to currency format
 export const formatCurrency = (digits) => {
     const formarted = formatter.format(digits)
     return formarted
 }
 
+// this function help package reports that are under indivitual projects 
 export const generateAllReports = (listOfProjects, listOfReports, listOfGateways) => {
     let projects = []
 
@@ -25,6 +26,7 @@ export const generateAllReports = (listOfProjects, listOfReports, listOfGateways
           amount: report.amount,
           date: report.created,
           transactionId: report.paymentId.slice(-5),
+          // get the exact gateway name
           gateway: listOfGateways.filter(gateway => gateway.gatewayId === report.gatewayId)[0].name
         }
       }),
@@ -37,6 +39,7 @@ export const generateAllReports = (listOfProjects, listOfReports, listOfGateways
   return projects
 }
 
+// this function help package reports that are under indivitual Gateways
 export const generateAllGateway = (listOfReports, listOfGateways) => {
     let gateways = []
 

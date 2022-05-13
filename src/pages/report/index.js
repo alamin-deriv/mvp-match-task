@@ -42,7 +42,7 @@ const Reports = ({
     useEffect(() => {
         fetchProjects()
         fetchGateways()
-        
+        // only this API if no user in the system
         if (!user.userId) fetchUser()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
@@ -62,11 +62,14 @@ const Reports = ({
          <Filter {...filterProps} />
 
          {isLoading ? (
-            <Loader />
+            <Loader data-testid="loader" />
          ) : (
            <Fragment>
            {listOfReports.length ? (
             <Fragment>
+            {
+                // displaying the component according to the filter
+            }
             {(projectState === "all" && gatewayState === "all") ? (<Main {...mainProps} />) : null}
             {(projectState === "all" && gatewayState === "one") ? (<AllProjectOneGateaway {...mainProps} />) : null}
             {(projectState === "one" && gatewayState === "one") ? (<OneProjectOneGateway {...mainProps} />) : null}

@@ -1,5 +1,4 @@
 import styled, {css} from 'styled-components';
-import { transparentize, darken } from "polished";
 import PropTypes from "prop-types";
 
 

@@ -5,6 +5,6 @@ import './index.css';
 export const Loader = () => {
 
     return (
-        <div className="loader"></div>
+        <div data-testid="loader" className="loader"></div>
     )
 }

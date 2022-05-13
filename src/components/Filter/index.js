@@ -60,11 +60,14 @@ export const Filter = ({listOfGateways, listOfProjects, fetchReports }) => {
       from,
       to
     }
-
+    
+    //preventing user from submitting without date range
     if (!from || !to) {
       alert("Please, select both From date and To date")
       return
     }
+
+    //calling the API without projectId and gatewayId
     if (projectId === 'all') delete data.projectId
     if (gatewayId === 'all') delete data.gatewayId
 

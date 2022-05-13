@@ -127,31 +127,13 @@ const AllProjectOneGateaway = ({
     const options = { 
             tooltips: { enabled : true },
             legend: { display : true },
-            plugins: {
-  datalabels: {
-    backgroundColor: function(context) {
-      return context.dataset.backgroundColor;
-    },
-    formatter: (val, context) => `${val}%`,
-    borderRadius: 25,
-    borderWidth: 3,
-    color: "black",
-    font: {
-      weight: "bold"
-    },
-    padding: 6
-  },
-
-  tooltip: {
-    callbacks: {
-      label: (ttItem) => `${ttItem.label}: ${ttItem.parsed}%`
-    }
-  }
-}
         }
     return (
         <StyledDiv>
          <div className="reports" >
+         {
+          //  Getting the current gateway
+        }
           <h4>All projects | {listOfGateways.filter(gateway => gateway.gatewayId === listOfReports[0].gatewayId)[0].name}</h4>
  
           {projects.map((project, index) => (

@@ -68,8 +68,9 @@ const Main = ({
      setProjects(projects)
      setReload(!reload) 
   }
+  
+  
 
-  console.log("Final Projects",projects);
 
     return (
         <StyledDiv>
